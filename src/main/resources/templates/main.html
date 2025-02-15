@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaeMin_Community</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<h1><a href="/">커뮤니티 홈페이지</a></h1>
+<div>
+    <div th:if="${loggedInUser != null}">
+        <p>
+            안녕하세요.
+            <strong th:text="${loggedInUser.username}">[사용자 이름]</strong>님!
+            <a href="/user/logout" onclick="return confirmLogout();">로그아웃</a>
+            <a href="/board/list">자유게시판</a>
+        </p>
+    </div>
+
+<div th:if="${loggedInUser == null}">
+    <a href="/user/login">로그인</a> <br>
+    <a href="/board/list">커뮤니티</a>
+</div>
+
+</div>
+</body>
+</html>

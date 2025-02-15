@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>커뮤니티</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/board/style2.css">
+</head>
+<body>
+<!-- 헤더 영역: 사이트 제목 및 내비게이션 -->
+<header>
+    <h1 class="site-title">
+        <a href="/board/list">커뮤니티</a>
+    </h1>
+    <nav class="main-nav">
+        <div id="home">
+            <a href="/">메인화면으로 가기</a>
+        </div>
+        <div id="create" th:if="${loggedInUser != null}">
+            <a href="/board/create">글쓰기</a>
+        </div>
+        <div id="check" th:if="${loggedInUser == null}">
+            <p>
+                글쓰기는 로그인이 필요합니다.
+                <a href="/user/login">로그인</a>
+            </p>
+        </div>
+    </nav>
+</header>
+
+<!-- 메인 콘텐츠 영역: 게시글 목록 -->
+<main class="content">
+    <section class="post-list">
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th>순번</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post, stat : ${posts}">
+                <td th:text="${stat.count}">1</td>
+                <td>
+                    <a th:href="@{/board/detail/{id}(id=${post.id})}" th:text="${post.title}">제목</a>
+                </td>
+                <td th:text="${post.author.username}">작성자</td>
+                <td th:text="${#temporals.format(post.createAt, 'yyyy-MM-dd HH:mm')}">작성일자</td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(posts)}">
+                <td colspan="4">게시글이 없습니다.</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>

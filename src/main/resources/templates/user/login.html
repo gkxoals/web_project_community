@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/user/style.css">
+</head>
+<body>
+
+<h1>login</h1>
+<hr>
+<div style="color: red;">
+    <p th:text="${error}"></p>
+</div>
+<form action="/user/login" method="POST">
+    <label for="username">username</label>
+    <input type="text" id="username" name="username" placeholder="이름 입력하세요" required autocomplete="off">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required autocomplete="off">
+    <button type="submit">login</button>
+</form>
+<hr>
+<p>아이디가 없다면: <a href="/user/signup">회원가입</a></p>
+
+</body>
+</html>

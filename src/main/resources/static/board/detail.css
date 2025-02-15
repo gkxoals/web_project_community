@@ -1,0 +1,272 @@
+/* ✅ 기본 스타일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* ✅ 게시글 전체 컨테이너 */
+.detail-container {
+  width: 60%;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ 게시글 헤더 */
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-header h1 {
+  color: #222;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detail-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.detail-meta span {
+  font-weight: bold;
+}
+
+/* ✅ 작성자 정보 */
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+/* ✅ 게시물 본문 */
+.detail-content {
+  width: 100%;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #444;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* ✅ 버튼 그룹 */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.btn-group a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-group a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ✅ 댓글 컨테이너 */
+.comment-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-container h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ✅ 댓글 스타일 */
+.comment-list {
+  padding: 0;
+}
+
+.comment {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment strong {
+  font-size: 1.1em;
+  color: #007bff;
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+.comment-actions {
+  font-size: 0.85em;
+  margin-top: 5px;
+  color: #555;
+  display: flex;
+  gap: 10px;
+}
+
+.comment-actions a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.comment-actions a:hover {
+  color: #0056b3;
+}
+
+/* ✅ 대댓글 스타일 */
+.replies {
+  padding-left: 0;
+  margin-top: 5px;
+}
+
+.reply {
+  margin-left: 40px;
+  padding: 12px;
+  border-left: 4px solid #007bff;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.reply p:first-child {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.reply .comment-actions {
+  font-size: 0.8em;
+}
+
+/* ✅ 삭제된 댓글 */
+.deleted-comment {
+  background-color: #f1f1f1;
+  padding: 10px;
+  color: #888;
+  text-align: center;
+  border-radius: 5px;
+  font-style: italic;
+  border: 1px solid #ddd;
+}
+
+/* ✅ 댓글 입력 폼 */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border 0.3s ease;
+}
+
+form textarea:focus {
+  border: 2px solid #007bff;
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  background-color: #1565C0;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #0d47a1;
+  transform: scale(1.05);
+}
+
+/* ✅ 모바일 최적화 */
+@media screen and (max-width: 768px) {
+  .detail-container,
+  .btn-group,
+  form {
+    width: 90%;
+  }
+
+  .comment-container {
+    width: 100%;
+  }
+
+  .reply {
+    margin-left: 20px;
+    border-left: 3px solid #007bff;
+  }
+}
